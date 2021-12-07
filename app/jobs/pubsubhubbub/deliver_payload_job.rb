@@ -4,7 +4,7 @@ module Pubsubhubbub
   class DeliverPayloadJob < ApplicationJob
     include Pubsubhubbub::Utils
 
-    queue_as :push
+    queue_as :default
 
     def perform(hub_url, subscription_id, current_payload)
       subscription = Subscription.find(subscription_id)

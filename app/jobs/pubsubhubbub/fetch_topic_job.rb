@@ -3,7 +3,7 @@ module Pubsubhubbub
   class FetchTopicJob < ApplicationJob
     include Pubsubhubbub::Utils
 
-    queue_as :push
+    queue_as :default
 
     def perform(hub_url, url)
       return unless Subscription.where(topic: url).active.any?

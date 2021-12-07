@@ -3,7 +3,7 @@ module Pubsubhubbub
   class VerifyIntentJob < ApplicationJob
     include Pubsubhubbub::Utils
 
-    queue_as :push
+    queue_as :default
 
     def perform(subscription_id)
       subscription = Subscription.find(subscription_id)
